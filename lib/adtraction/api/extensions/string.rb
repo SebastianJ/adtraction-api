@@ -1,12 +1,17 @@
 class String
     
-  def camelize(uppercase_first_letter = true)
+  def camelize(first_letter = :upper)
     string = self
-    if uppercase_first_letter
+    
+    case first_letter
+    when :upper
       string = string.sub(/^[a-z\d]*/) { $&.capitalize }
-    else
+    when :lower
       string = string.sub(/^(?:(?=\b|[A-Z_])|\w)/) { $&.downcase }
+    else
+      raise ArgumentError, "Invalid option, use either :upper or :lower."
     end
+
     string.gsub(/(?:_|(\/))([a-z\d]*)/) { "#{$1}#{$2.capitalize}" }.gsub('/', '::')
   end
   

@@ -9,7 +9,7 @@ module Adtraction
           
           possible_params.each do |param|
             value           =   eval("#{param}")
-            data[param.to_s.camelize(false)] = value unless value.nil?
+            data[param.to_s.camelize(:lower)] = value unless value.nil?
           end
           
           ::Adtraction::Api::Models::Program.parse(post(path, data: data, options: options)&.body)
