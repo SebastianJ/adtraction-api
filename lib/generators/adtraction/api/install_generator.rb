@@ -3,7 +3,7 @@
 require "rails/generators/base"
 
 module Adtraction
-  module Api
+  module API
     module Generators
       class InstallGenerator < Rails::Generators::NamedBase
         include Rails::Generators::ResourceHelpers

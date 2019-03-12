@@ -8,7 +8,7 @@ VCR.configure do |c|
   c.configure_rspec_metadata!
   
   c.filter_sensitive_data('API_KEY') do |interaction|
-    Adtraction::Api.configuration.api_key
+    Adtraction::API.configuration.api_key
   end
   
   c.before_record do |i|

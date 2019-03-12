@@ -1,6 +1,6 @@
-# Adtraction::Api
+# Adtraction::API
 
-Adtraction::Api is a Ruby client to interact with [Adtraction's](https://adtraction.com) [API](https://adtraction.docs.apiary.io/#).
+Adtraction::API is a Ruby client to interact with [Adtraction's](https://adtraction.com) [API](https://adtraction.docs.apiary.io/#).
 
 ## Installation
 
@@ -23,17 +23,21 @@ Or install it yourself as:
 First of all you need an Adtraction account in order to get your API key. After you've gotten ahold of your API key, configure the client to use it:
 
 ```ruby
-Adtraction::Api.configure do |config|
+Adtraction::API.configure do |config|
   config.api_key    =   "YOUR_API_KEY"
 end
 ```
 
-If you're using Ruby on Rails, just put this in an initializer e.g. under config/initializers/adtraction_api.rb.
+If you're using Ruby on Rails, you can generate an initializer using:
+
+```ruby
+rails g adtraction:api:install Adtraction
+```
 
 If you're trying to access the API using multiple API keys, then initialize each client with its own separate config:
 
 ```ruby
-Adtraction::Api::Client.new(configuration: Adtraction::Api::Configuration.new(api_key: "SOME_OTHER_API_KEY"))
+Adtraction::API::Client.new(configuration: Adtraction::API::Configuration.new(api_key: "SOME_OTHER_API_KEY"))
 ```
 
 This project is a WIP and not all endpoints have been implemented. They'll be gradually implemented depending on what I personally need to use from the API.
@@ -60,4 +64,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Adtraction::Api project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/SebastianJ/adtraction-api/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Adtraction::API project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/SebastianJ/adtraction-api/blob/master/CODE_OF_CONDUCT.md).

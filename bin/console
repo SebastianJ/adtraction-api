@@ -9,11 +9,11 @@ cfg_path              =   File.join(File.dirname(__FILE__), "../credentials.yml"
 if ::File.exists?(cfg_path)
   cfg                 =   YAML.load_file(cfg_path)
 
-  Adtraction::Api.configure do |config|
+  Adtraction::API.configure do |config|
     config.api_key    =   cfg["api_key"]
   
     config.faraday    =   {
-      user_agent: "Adtraction Ruby Client #{::Adtraction::Api::VERSION}",
+      user_agent: "Adtraction Ruby Client #{::Adtraction::API::VERSION}",
       verbose:    true
     }
   end

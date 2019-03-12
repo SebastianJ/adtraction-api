@@ -1,6 +1,6 @@
-RSpec.describe Adtraction::Api::Client do
+RSpec.describe Adtraction::API::Client do
   before { setup_client }
-  let(:client) { Adtraction::Api::Client.new }
+  let(:client) { Adtraction::API::Client.new }
   
   describe :channels, vcr: {cassette_name: 'channels'} do
     let(:channels) { client.approved_channels }
@@ -14,7 +14,7 @@ RSpec.describe Adtraction::Api::Client do
       name:             "Test channel 1",
     }
 
-    it { expect(channel).to be_a_kind_of(::Adtraction::Api::Models::Channel) }
+    it { expect(channel).to be_a_kind_of(::Adtraction::API::Models::Channel) }
   
     expectations.each do |key, value|
       it "should have correct value for instance variable #{key}" do

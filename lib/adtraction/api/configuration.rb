@@ -1,5 +1,5 @@
 module Adtraction
-  module Api
+  module API
     class Configuration
       attr_accessor :host, :api_version, :api_key, :faraday
     
@@ -10,7 +10,7 @@ module Adtraction
       
         self.faraday          =   {
           adapter:    :net_http,
-          user_agent: "Adtraction Ruby Client #{::Adtraction::Api::VERSION}",
+          user_agent: "Adtraction Ruby Client #{::Adtraction::API::VERSION}",
           verbose:    false
         }
       end

@@ -1,5 +1,5 @@
 module Adtraction
-  module Api
+  module API
     module Affiliate
       module Programs
         
@@ -12,7 +12,7 @@ module Adtraction
             data[param.to_s.camelize(:lower)] = value unless value.nil?
           end
           
-          ::Adtraction::Api::Models::Program.parse(post(path, data: data, options: options)&.body)
+          ::Adtraction::API::Models::Program.parse(post(path, data: data, options: options)&.body)
         end
         
         def program_info(program_id, path: "/affiliate/programinfo", options: {})

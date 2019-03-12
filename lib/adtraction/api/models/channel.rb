@@ -1,5 +1,5 @@
 module Adtraction
-  module Api
+  module API
     module Models
       
       class Channel
