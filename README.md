@@ -44,7 +44,7 @@ To instantiate a client, simply:
 
 ```ruby
 client = Adtraction::Api::Client.new
-client.channels
+client.approved_channels
 ```
 
 This project is a WIP and not all endpoints have been implemented. They'll be gradually implemented depending on what I personally need to use from the API.
