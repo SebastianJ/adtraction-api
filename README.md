@@ -40,6 +40,13 @@ If you're trying to access the API using multiple API keys, then initialize each
 Adtraction::Api::Client.new(configuration: Adtraction::Api::Configuration.new(api_key: "SOME_OTHER_API_KEY"))
 ```
 
+To instantiate a client, simply:
+
+```ruby
+client = Adtraction::Api::Client.new
+client.channels
+```
+
 This project is a WIP and not all endpoints have been implemented. They'll be gradually implemented depending on what I personally need to use from the API.
 
 Feel free to fork and submit your own pull requests if you decide to add more endpoints :)
