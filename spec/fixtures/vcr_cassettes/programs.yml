@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.adtraction.com/v1/affiliate/programs
+    body:
+      encoding: UTF-8
+      string: '{"channelId":"SOME_CHANNEL_ID","market":"SE","currency":"SEK"}'
+    headers:
+      X-Token:
+      - API_KEY
+      User-Agent:
+      - Adtraction Ruby Client 0.1.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Tue, 12 Mar 2019 05:36:53 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '[{"programId":1233068414,"market":"SE","currency":"SEK","approvalStatus":3,"feed":false,"semMarketing":2,"socialMarketing":1,"emailMarketing":0,"cashbackMarketing":0,"couponMarketing":1,"programName":"Komplett
+        Bank SE","programURL":"https://www.komplettbank.se","currentSegment":"Standard","pendingActive":false,"cookieDuration":45,"adId":1233068417,"compensations":[{"name":"Godkänt
+        lån","value":1550.0,"type":"SEK","transactionType":3},{"name":"Godkänt Kreditkort","value":600.0,"type":"SEK","transactionType":3}],"logoURL":"https://secure.adtraction.com/image.htm?imgId=1233068412","category":"Banking
+        & Finance"}]'
+    http_version: 
+  recorded_at: Tue, 12 Mar 2019 05:36:54 GMT
+recorded_with: VCR 4.0.0

@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.adtraction.com/v1/affiliate/approvedchannels
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Token:
+      - API_KEY
+      User-Agent:
+      - Adtraction Ruby Client 0.1.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Tue, 12 Mar 2019 05:36:48 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '[{"channelId":111111111111,"channelName":"Test channel 1"},{"channelId":2222222222222,"channelName":"Test channel 2"},{"channelId":3333333333333,"channelName":"Test channel 3"}]'
+    http_version: 
+  recorded_at: Tue, 12 Mar 2019 05:36:48 GMT
+recorded_with: VCR 4.0.0
