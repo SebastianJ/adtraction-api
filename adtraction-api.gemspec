@@ -5,7 +5,7 @@ require "adtraction/api/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "adtraction-api"
-  spec.version       = Adtraction::API::VERSION
+  spec.version       = Adtraction::Api::VERSION
   spec.authors       = ["Sebastian Johnsson"]
   spec.email         = ["sebastian.johnsson@gmail.com"]
 

@@ -1,5 +1,5 @@
 module Adtraction
-  module API
+  module Api
     module Constants
       
       TRANSACTION_TYPE_ENUM = {

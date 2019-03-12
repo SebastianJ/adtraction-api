@@ -1,5 +1,5 @@
 module Adtraction
-  module API
+  module Api
     module Models
       
       class Program
@@ -59,15 +59,15 @@ module Adtraction
               program.send("#{column}=", item.fetch(api_column, nil))
             end
             
-            program.approval_status     =   Adtraction::API::Constants::APPROVAL_STATUS_ENUM.fetch(item.fetch("approvalStatus"))
-            program.email_marketing     =   Adtraction::API::Constants::EMAIL_MARKETING_ENUM.fetch(item.fetch("emailMarketing"))
-            program.sem_marketing       =   Adtraction::API::Constants::SEM_MARKETING_ENUM.fetch(item.fetch("semMarketing"))
-            program.social_marketing    =   Adtraction::API::Constants::SOCIAL_MARKETING_ENUM.fetch(item.fetch("socialMarketing"))
-            program.cashback_marketing  =   Adtraction::API::Constants::CASHBACK_MARKETING_ENUM.fetch(item.fetch("cashbackMarketing"))
-            program.coupon_marketing    =   Adtraction::API::Constants::COUPON_MARKETING_ENUM.fetch(item.fetch("couponMarketing"))
+            program.approval_status     =   Adtraction::Api::Constants::APPROVAL_STATUS_ENUM.fetch(item.fetch("approvalStatus"))
+            program.email_marketing     =   Adtraction::Api::Constants::EMAIL_MARKETING_ENUM.fetch(item.fetch("emailMarketing"))
+            program.sem_marketing       =   Adtraction::Api::Constants::SEM_MARKETING_ENUM.fetch(item.fetch("semMarketing"))
+            program.social_marketing    =   Adtraction::Api::Constants::SOCIAL_MARKETING_ENUM.fetch(item.fetch("socialMarketing"))
+            program.cashback_marketing  =   Adtraction::Api::Constants::CASHBACK_MARKETING_ENUM.fetch(item.fetch("cashbackMarketing"))
+            program.coupon_marketing    =   Adtraction::Api::Constants::COUPON_MARKETING_ENUM.fetch(item.fetch("couponMarketing"))
             
             program.compensations&.each do |compensation|
-              enum                      =   Adtraction::API::Constants::TRANSACTION_TYPE_ENUM.fetch(compensation["transactionType"], nil)
+              enum                      =   Adtraction::Api::Constants::TRANSACTION_TYPE_ENUM.fetch(compensation["transactionType"], nil)
               compensation["transactionType"]   =   enum unless enum.nil?
             end
             

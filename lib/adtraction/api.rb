@@ -19,18 +19,18 @@ if !String.instance_methods(false).include?(:camelize)
 end
 
 module Adtraction
-  module API
+  module Api
     
     class << self
       attr_writer :configuration
     end
   
     def self.configuration
-      @configuration ||= ::Adtraction::API::Configuration.new
+      @configuration ||= ::Adtraction::Api::Configuration.new
     end
 
     def self.reset
-      @configuration = ::Adtraction::API::Configuration.new
+      @configuration = ::Adtraction::Api::Configuration.new
     end
 
     def self.configure

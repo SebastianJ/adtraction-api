@@ -1,10 +1,10 @@
 module Adtraction
-  module API
+  module Api
     module Affiliate
       module Channels
         
         def approved_channels(path: "/affiliate/approvedchannels", options: {})
-          ::Adtraction::API::Models::Channel.parse(get(path, options: options)&.body)
+          ::Adtraction::Api::Models::Channel.parse(get(path, options: options)&.body)
         end
       
       end

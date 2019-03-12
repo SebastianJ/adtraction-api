@@ -1,15 +1,15 @@
 module Adtraction
-  module API
+  module Api
     class Client
       attr_accessor :configuration
     
-      def initialize(configuration: ::Adtraction::API.configuration)
+      def initialize(configuration: ::Adtraction::Api.configuration)
         self.configuration    =   configuration        
         raise InvalidApiKeyError, "You need to supply a valid API key!" if self.configuration.api_key.to_s.empty?
       end
       
-      include Adtraction::API::Affiliate::Channels
-      include Adtraction::API::Affiliate::Programs
+      include Adtraction::Api::Affiliate::Channels
+      include Adtraction::Api::Affiliate::Programs
     
       def to_uri(path)
         path                  =   path.gsub(/^\//i, "")
@@ -35,7 +35,7 @@ module Adtraction
       def request(path, method: :get, params: {}, data: {}, headers: {}, options: {})
         headers               =   {
           "X-Token"       =>  self.configuration.api_key,
-          "User-Agent"    =>  self.configuration.faraday.fetch(:user_agent, "Adtraction Ruby Client #{::Adtraction::API::VERSION}"),
+          "User-Agent"    =>  self.configuration.faraday.fetch(:user_agent, "Adtraction Ruby Client #{::Adtraction::Api::VERSION}"),
           "Content-Type"  =>  "application/json"
         }.merge(headers)
         
@@ -68,7 +68,7 @@ module Adtraction
       end
       
       def log(message)
-        puts "[Adtraction::API::Client] - #{Time.now}: #{message}" if !message.to_s.empty? && self.verbose
+        puts "[Adtraction::Api::Client] - #{Time.now}: #{message}" if !message.to_s.empty? && self.verbose
       end
     
     end

@@ -1,7 +1,7 @@
 RSpec.configure do |config|
   config.before(:each) do
     # The famous singleton problem
-    Adtraction::API.configure do |config|
+    Adtraction::Api.configure do |config|
       config.api_key    =   nil
     end
   end
@@ -15,11 +15,11 @@ def setup_client(type = :full)
   if ::File.exists?(cfg_path)
     cfg                 =   YAML.load_file(cfg_path)
 
-    Adtraction::API.configure do |config|
+    Adtraction::Api.configure do |config|
       config.api_key    =   cfg["api_key"]
   
       config.faraday    =   {
-        user_agent: "Adtraction Ruby Client #{::Adtraction::API::VERSION}",
+        user_agent: "Adtraction Ruby Client #{::Adtraction::Api::VERSION}",
         verbose:    false
       }
     end
