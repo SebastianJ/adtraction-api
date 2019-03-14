@@ -3,7 +3,7 @@ module Adtraction
     module Constants
       
       TRANSACTION_TYPE_ENUM = {
-        2   => :unknown, # Some programs have this value
+        2   => :unique_visitor,
         3   => :sale,
         4   => :lead,
         31  => :isale, #iSale (post impression Sale)

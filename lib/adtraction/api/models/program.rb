@@ -67,7 +67,7 @@ module Adtraction
             program.coupon_marketing    =   Adtraction::Api::Constants::COUPON_MARKETING_ENUM.fetch(item.fetch("couponMarketing"))
             
             program.compensations&.each do |compensation|
-              enum                      =   Adtraction::Api::Constants::TRANSACTION_TYPE_ENUM.fetch(compensation["transactionType"], nil)
+              enum                      =   Adtraction::Api::Constants::TRANSACTION_TYPE_ENUM.fetch(compensation["transactionType"], :unknown)
               compensation["transactionType"]   =   enum unless enum.nil?
             end
             
